@@ -1,3 +1,3 @@
-# Páginas de teste
+# Testing Repository
 
-Repositorio para testar publicação de páginas
+Repository to test simple pages. (https://doljpo.github.io/web-pages-dev-test/)
