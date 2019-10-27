@@ -1,11 +1,30 @@
-.height30 {
+body {
+    background-color: #232323;
+}
+
+h1 {
+    color: white;
+}
+
+.random-rgb-panel {
+    background-color: cornflowerblue;
+    width: 30%;
+    padding-bottom: 25%;
+    float: left;
+    margin: 1.6%;
+}
+
+.selectedMode {
+    background-color: blue;
+}
+
+#boardGame {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#optionsBar {
+    text-align: center;
+    background-color: white;
     height: 30px;
-}
-
-.height50 {
-    height: 50px;
-}
-
-.height100 {
-    height: 100px;
 }
