@@ -52,12 +52,12 @@ function startGame() {
 }
 
 function newGame(difficult) {
-    newGameButton.textContent = "NEW COLORS";
+    newGameButton.textContent = "New Colors";
     message.textContent = "";
 
     generateRandomColors(difficult);
     targetColor.textContent = selectedColor = pickColor();
-    titulo.style.backgroundColor = "#232323";
+    titulo.style.backgroundColor = "steelblue";
 }
 
 function generateRandomColors(numberOfPanels) {
@@ -94,6 +94,5 @@ function endGame() {
     }
 
     titulo.style.backgroundColor = selectedColor;
-    newGameButton.textContent = "PLAY AGAIN";
+    newGameButton.textContent = "Play again";
 }
-
