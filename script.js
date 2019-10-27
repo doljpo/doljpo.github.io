@@ -5,8 +5,8 @@ var numberOfPanels = 6;
 
 generateRandomColors(numberOfPanels);
 
-// var targetColor = document.querySelector("#targetColor");
-// targetColor.textContent = 
+ var targetColor = document.querySelector("#targetColor");
+ targetColor.textContent = 
 selectedColor = pickColor();
 
 var newGameButton = document.querySelector("#newGameButton");
@@ -57,7 +57,7 @@ function newGame(difficult) {
     message.textContent = "";
 
     generateRandomColors(difficult);
-    // targetColor.textContent = 
+     targetColor.textContent = 
     selectedColor = pickColor();
     titulo.style.backgroundColor = "steelblue";
 }
