@@ -1,8 +1,36 @@
 body {
+    margin: 0;
     background-color: #232323;
+    font-family: "Montserrat";    
 }
 
 h1 {
+    color: white;
+    background-color: steelblue;    
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 1.1;
+    padding: 20px 0;
+    margin: 0;
+    transition: all .5s;
+}
+
+button {
+    border: none;
+    background: none;
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    outline: none;
+    transition: all .5s;
+}
+
+button:hover {
+    background-color: steelblue;
     color: white;
 }
 
@@ -12,19 +40,36 @@ h1 {
     padding-bottom: 25%;
     float: left;
     margin: 1.6%;
+    border-radius: 15%;
+    transition: all .4s;
 }
 
 .selectedMode {
-    background-color: blue;
+    background-color: steelblue;
+    color: white;
+}
+
+#targetColor {
+    font-size: 3rem;
 }
 
 #boardGame {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 #optionsBar {
     text-align: center;
     background-color: white;
     height: 30px;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
+    color: steelblue;
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 0.5;
 }
