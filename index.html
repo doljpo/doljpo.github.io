@@ -1,67 +1,28 @@
-<!doctype html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-
-    <title>Grid + Flexbox</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Color Game</title>
 </head>
-
 <body>
-    <div class="container">
-        <h1 class="text-center display-4">Grid + Flexbox</h1>
-        <div class="row border justify-content-around align-items-center">
-            <div class="col-sm-3 bg-warning">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus dolore error ipsam dolores soluta ea libero dignissimos est explicabo voluptates.
-            </div>
-            <div class="col-sm-3 bg-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nulla omnis ad doloremque amet quis explicabo ex error aliquid tempora itaque adipisci, nobis cumque provident magnam accusamus, delectus inventore illo odio vero ipsum suscipit cum. Quia est dolorem ipsa! Exercitationem inventore dolorem beatae nostrum, culpa debitis quis. Quisquam, natus temporibus.
-            </div>
-            <div class="col-sm-3 bg-warning">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus dolore error ipsam dolores soluta ea libero dignissimos est explicabo voluptates.
-            </div>
-        </div>
-        <div class="row border justify-content-center align-items-end">
-            <div class="col-2 bg-primary align-self-start">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, ut.
-            </div>
-            <div class="col-2 bg-primary">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, ut.
-            </div>
-            <div class="col-2 bg-success">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti sunt excepturi dolorum asperiores quos ipsa eos consectetur? Iure repudiandae vitae molestias reiciendis alias in saepe magni velit esse, amet tempora.
-            </div>
-            <div class="col-2 bg-primary align-self-start">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, ut.
-            </div>
-            <div class="col-2 bg-primary">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, ut.
-            </div>
-        </div>
-
-        <div class="row text-center justify-content-between">
-            <div class="col-md-6 col-lg-5 bg-danger">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil quis commodi aspernatur ipsum itaque optio, at maiores quaerat quae sed?
-            </div>
-            <div class="col-md-6 col-lg-5 bg-danger">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores sequi nesciunt aspernatur sit, libero beatae error odio expedita neque tenetur.
-            </div>
-        </div>
+    <h1>The Great <span id="targetColor">RGB Color</span> Guessing Game</h1>
+    <div id="optionsBar">
+        <button id="newGameButton">NEW COLORS</button>
+        <span id="message"></span>
+        <button id="easyModeBtn">EASY</button>
+        <button id="hardModeBtn" class="selectedMode">HARD</button>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-</body>
+    <div id="boardGame">
+        <div class="random-rgb-panel"></div>
+        <div class="random-rgb-panel"></div>
+        <div class="random-rgb-panel"></div>
+        <div class="random-rgb-panel"></div>
+        <div class="random-rgb-panel"></div>
+        <div class="random-rgb-panel"></div>        
+    </div>
 
+    <script src="script.js"></script>
+</body>
 </html>
