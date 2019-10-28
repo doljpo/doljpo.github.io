@@ -45,7 +45,7 @@ function startGame() {
                 message.textContent = "Acertou!";
                 endGame();
             } else {
-                message.textContent = "Tente outra";
+                message.textContent = "Errou";
                 this.style.backgroundColor = "#232323";
             }
         });
