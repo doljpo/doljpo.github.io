@@ -92,6 +92,6 @@ function endGame() {
     }
 
     titulo.style.backgroundColor = selectedColor;
-    newGameButton.textContent = "Jogar novamente";
+    newGameButton.textContent = "Jogar";
 }
 
