@@ -39,7 +39,8 @@ function startGame() {
             var clickedColor = this.style.backgroundColor;
     
             if (clickedColor == selectedColor) {
-                message.textContent = "Acertou!";
+                message.textContent = "";
+                titulo.textContent = "Acertou!";
                 endGame();
             } else {
                 message.textContent = "Errou";
@@ -56,6 +57,7 @@ function newGame(difficult) {
     generateRandomColors(difficult);
     selectedColor = pickColor();
     titulo.style.backgroundColor = "steelblue";
+    titulo.innerHTML = "Adivinhe a cor<br> que estou pensando";
 }
 
 function generateRandomColors(numberOfPanels) {
@@ -92,6 +94,6 @@ function endGame() {
     }
 
     titulo.style.backgroundColor = selectedColor;
-    newGameButton.textContent = "Jogar";
+    newGameButton.textContent = "Novo Jogo";
 }
 
