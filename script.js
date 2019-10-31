@@ -4,7 +4,9 @@ var gamePanels = document.querySelectorAll(".random-rgb-panel");
 var numberOfPanels = 6;
 
 generateRandomColors(numberOfPanels);
-selectedColor = pickColor();
+
+var targetColor = document.querySelector("#targetColor");
+targetColor.textContent = selectedColor = pickColor();
 
 var newGameButton = document.querySelector("#newGameButton");
 newGameButton.addEventListener("click", function() {
@@ -39,11 +41,10 @@ function startGame() {
             var clickedColor = this.style.backgroundColor;
     
             if (clickedColor == selectedColor) {
-                message.textContent = "";
-                titulo.textContent = "Acertou!";
+                message.textContent = "Correct";
                 endGame();
             } else {
-                message.textContent = "Errou";
+                message.textContent = "Try Again";
                 this.style.backgroundColor = "#232323";
             }
         });
@@ -51,13 +52,12 @@ function startGame() {
 }
 
 function newGame(difficult) {
-    newGameButton.textContent = "Novas Cores";
+    newGameButton.textContent = "New Colors";
     message.textContent = "";
 
     generateRandomColors(difficult);
-    selectedColor = pickColor();
+    targetColor.textContent = selectedColor = pickColor();
     titulo.style.backgroundColor = "steelblue";
-    titulo.innerHTML = "Adivinhe a cor<br> que estou pensando";
 }
 
 function generateRandomColors(numberOfPanels) {
@@ -94,6 +94,5 @@ function endGame() {
     }
 
     titulo.style.backgroundColor = selectedColor;
-    newGameButton.textContent = "Novo Jogo";
+    newGameButton.textContent = "Play again";
 }
-
