@@ -42,8 +42,6 @@ button:hover {
     margin: 1.6%;
     border-radius: 15%;
     transition: all .4s;
-    -moz-transition: all .4s;
-    -webkit-transition: all .4s;    
 }
 
 .selectedMode {
