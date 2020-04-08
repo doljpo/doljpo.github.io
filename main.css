@@ -29,7 +29,14 @@ body {
     text-align: center;
     color: #fff;
     font-size: 50px;
+    margin-top: 20%;        
+}
+
+.banner-text small {
+    text-align: center;
+    color: #fff;    
     margin-top: 20%;
+    margin-left: 50%;
 }
 
 .animation-area {
