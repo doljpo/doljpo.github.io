@@ -1,24 +1,100 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>s2Larissa</title>
-
-    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+    <link rel="stylesheet" href=".\style.css">
 </head>
-
 <body>
-    <div class="eu">        
-        David
-
-        <svg class="heart" viewBox="0 0 32 29.6">
-            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-            c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-        </svg>
-    
-        Larissa
+    <div class="banner-text">                
+        <h2 id="noheart-title">(-_-)・・・</h2>
+        <h2 id="heart-title" class="hidden">♡( ◡‿◡ )</h2>
     </div>
-</body>
 
+    <div class="animation-area">        
+        <ul class="box-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>        
+        <ul class="box-area-heart-version hidden">
+            <li>
+                <svg class="heart" viewBox="0 0 32 29.6">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                </svg>
+            </li>
+            <li>
+                <svg class="heart" viewBox="0 0 32 29.6">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                </svg>                
+            </li>
+            <li>
+                <svg class="heart" viewBox="0 0 32 29.6">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                </svg>                
+            </li>
+            <li>
+                <svg class="heart" viewBox="0 0 32 29.6">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                </svg>                
+            </li>
+            <li>
+                <svg class="heart" viewBox="0 0 32 29.6">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                </svg>                
+            </li>
+            <li>
+                <svg class="heart" viewBox="0 0 32 29.6">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                </svg>                
+            </li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            
+            const heart_box = document.querySelector('.box-area-heart-version');
+            const noheart_box = document.querySelector('.box-area');
+            const heart_title = document.querySelector('#heart-title');
+            const noheart_title = document.querySelector('#noheart-title');
+
+            function durationSlider() {        
+                var count = 0;
+                
+                setInterval(function() {
+
+                    if (heart_box.classList.contains("hidden")) {
+                        heart_box.classList.remove("hidden");
+                        noheart_box.classList.add("hidden");
+                        heart_title.classList.remove("hidden");
+                        noheart_title.classList.add("hidden");
+                    } else {
+                        heart_box.classList.add("hidden");
+                        noheart_box.classList.remove("hidden");
+                        heart_title.classList.add("hidden");
+                        noheart_title.classList.remove("hidden");
+                    }
+            
+                    count += 1;
+                    if (count >= 2) {
+                        count = 0;
+                    }
+                }, 15000);
+            
+            }
+            
+            durationSlider();
+            
+        });        
+    </script>
+</body>
 </html>
