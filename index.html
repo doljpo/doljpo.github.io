@@ -12,6 +12,7 @@
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
+            margin: 0;
         }
         .container {
             text-align: center;
@@ -19,21 +20,41 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
         }
         .flashcard {
             padding: 20px;
             font-size: 18px;
             cursor: pointer;
             user-select: none;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background: #007BFF;
+            color: white;
+            transition: background 0.3s;
+        }
+        .flashcard:hover {
+            background: #0056b3;
         }
         .controls {
             margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
         }
         button {
             padding: 10px;
             font-size: 16px;
-            margin: 5px;
             cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: #28a745;
+            color: white;
+            flex: 1;
+            margin: 0 5px;
+        }
+        button:hover {
+            background: #218838;
         }
     </style>
 </head>
@@ -41,8 +62,8 @@
     <div class="container">
         <div id="flashcard" class="flashcard">Clique para ver a resposta</div>
         <div class="controls">
-            <button onclick="prevCard()">Anterior</button>
-            <button onclick="nextCard()">Próximo</button>
+            <button onclick="prevCard()">◀ Anterior</button>
+            <button onclick="nextCard()">Próximo ▶</button>
         </div>
     </div>
 
