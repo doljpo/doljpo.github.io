@@ -68,11 +68,20 @@
     </div>
 
     <script>
-        const flashcards = [
+        let flashcards = [
             { question: "O que é a computação em nuvem?", answer: "Computação em nuvem é a entrega de serviços de TI pela Internet." },
             { question: "O que é SaaS?", answer: "Software como Serviço, onde os aplicativos são fornecidos pela internet." },
             { question: "O que é IaaS?", answer: "Infraestrutura como Serviço, que fornece recursos de computação virtualizados." }
         ];
+        
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        
+        shuffleArray(flashcards);
         
         let currentIndex = 0;
         let showingQuestion = true;
