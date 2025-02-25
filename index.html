@@ -57,6 +57,13 @@
         button:hover {
             background: #218838;
         }
+        .reset {
+            margin-top: 10px;
+            background: #dc3545;
+        }
+        .reset:hover {
+            background: #c82333;
+        }
         .score {
             font-size: 18px;
             font-weight: bold;
@@ -64,17 +71,14 @@
     </style>
 </head>
 <body>
-    <div class="score">Pontuação: <span id="score">0%</span></div>
+    <div class="score">Pontuação: <span id="score">0%</span> (<span id="answeredCount">0</span>/<span id="totalQuestions">116</span>)</div>
     <div class="container">
         <div id="flashcard" class="flashcard">Clique para ver a resposta</div>
-        <div class="controls">
-            <button onclick="prevCard()">◀ Anterior</button>
-            <button onclick="nextCard()">Próximo ▶</button>
-        </div>
         <div class="controls">
             <button onclick="markCorrect()">Acertei</button>
             <button onclick="markWrong()">Errei</button>
         </div>
+        <button class="reset" onclick="resetGame()">Resetar</button>
     </div>
 
     <script>
@@ -93,21 +97,30 @@
 
         shuffleArray(flashcards);
 
+        let answeredCorrectly = new Set();
         let currentIndex = 0;
         let showingQuestion = true;
         let correctAnswers = 0;
-        let totalQuestions = 116;
+        let totalQuestions = flashcards.length;
 
         const flashcard = document.getElementById("flashcard");
         const scoreDisplay = document.getElementById("score");
+        const answeredCountDisplay = document.getElementById("answeredCount");
+        const totalQuestionsDisplay = document.getElementById("totalQuestions");
+        totalQuestionsDisplay.textContent = totalQuestions;
 
         function updateCard() {
+            if (flashcards.length === 0) {
+                flashcard.textContent = "Parabéns! Você completou todas as perguntas.";
+                return;
+            }
             flashcard.textContent = showingQuestion ? flashcards[currentIndex].question : flashcards[currentIndex].answer;
         }
 
         function updateScore() {
             let percentage = Math.round((correctAnswers / totalQuestions) * 100);
             scoreDisplay.textContent = `${percentage}%`;
+            answeredCountDisplay.textContent = correctAnswers;
         }
 
         flashcard.addEventListener("click", () => {
@@ -116,25 +129,38 @@
         });
 
         function nextCard() {
-            currentIndex = (currentIndex + 1) % flashcards.length;
-            showingQuestion = true;
-            updateCard();
-        }
-
-        function prevCard() {
-            currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
+            if (flashcards.length === 0) return;
+            currentIndex = Math.floor(Math.random() * flashcards.length);
             showingQuestion = true;
             updateCard();
         }
 
         function markCorrect() {
+            if (flashcards.length === 0) return;
             correctAnswers++;
+            answeredCorrectly.add(currentIndex);
+            flashcards.splice(currentIndex, 1);
             updateScore();
             nextCard();
         }
 
         function markWrong() {
             nextCard();
+        }
+
+        function resetGame() {
+            correctAnswers = 0;
+            answeredCorrectly.clear();
+            flashcards = [
+                { question: "O que é a computação em nuvem?", answer: "Computação em nuvem é a entrega de serviços de TI pela Internet." },
+                { question: "O que é SaaS?", answer: "Software como Serviço, onde os aplicativos são fornecidos pela internet." },
+                { question: "O que é IaaS?", answer: "Infraestrutura como Serviço, que fornece recursos de computação virtualizados." }
+            ];
+            shuffleArray(flashcards);
+            currentIndex = 0;
+            showingQuestion = true;
+            updateScore();
+            updateCard();
         }
 
         updateCard();
