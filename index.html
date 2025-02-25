@@ -13,6 +13,7 @@
             height: 100vh;
             background-color: #f4f4f4;
             margin: 0;
+            flex-direction: column;
         }
         .container {
             text-align: center;
@@ -37,7 +38,7 @@
         .flashcard:hover {
             background: #0056b3;
         }
-        .controls {
+        .controls, .score {
             margin-top: 20px;
             display: flex;
             justify-content: space-between;
@@ -56,14 +57,23 @@
         button:hover {
             background: #218838;
         }
+        .score {
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+    <div class="score">Pontuação: <span id="score">0%</span></div>
     <div class="container">
         <div id="flashcard" class="flashcard">Clique para ver a resposta</div>
         <div class="controls">
             <button onclick="prevCard()">◀ Anterior</button>
             <button onclick="nextCard()">Próximo ▶</button>
+        </div>
+        <div class="controls">
+            <button onclick="markCorrect()">Acertei</button>
+            <button onclick="markWrong()">Errei</button>
         </div>
     </div>
 
@@ -73,22 +83,31 @@
             { question: "O que é SaaS?", answer: "Software como Serviço, onde os aplicativos são fornecidos pela internet." },
             { question: "O que é IaaS?", answer: "Infraestrutura como Serviço, que fornece recursos de computação virtualizados." }
         ];
-        
+
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
-        
+
         shuffleArray(flashcards);
-        
+
         let currentIndex = 0;
         let showingQuestion = true;
+        let correctAnswers = 0;
+        let totalQuestions = 116;
+
         const flashcard = document.getElementById("flashcard");
+        const scoreDisplay = document.getElementById("score");
 
         function updateCard() {
             flashcard.textContent = showingQuestion ? flashcards[currentIndex].question : flashcards[currentIndex].answer;
+        }
+
+        function updateScore() {
+            let percentage = Math.round((correctAnswers / totalQuestions) * 100);
+            scoreDisplay.textContent = `${percentage}%`;
         }
 
         flashcard.addEventListener("click", () => {
@@ -108,7 +127,18 @@
             updateCard();
         }
 
+        function markCorrect() {
+            correctAnswers++;
+            updateScore();
+            nextCard();
+        }
+
+        function markWrong() {
+            nextCard();
+        }
+
         updateCard();
+        updateScore();
     </script>
 </body>
 </html>
