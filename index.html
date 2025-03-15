@@ -82,6 +82,12 @@
             font-size: 18px;
             font-weight: bold;
         }
+        .final-result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -93,6 +99,7 @@
             <button onclick="submitAnswer()">Confirmar</button>
         </div>
         <button class="reset" onclick="resetGame()">Resetar</button>
+        <div id="finalResult" class="final-result"></div>
     </div>
 
     <script>
@@ -111,34 +118,22 @@
             }
         ];
 
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
-
-        shuffleArray(flashcards);
-
-        let currentIndex = 0;
-        let correctAnswers = 0;
         let totalQuestions = flashcards.length;
+        let correctAnswers = 0;
         let selectedAnswers = [];
 
         const flashcard = document.getElementById("flashcard");
         const optionsContainer = document.getElementById("options");
         const scoreDisplay = document.getElementById("score");
         const answeredCountDisplay = document.getElementById("answeredCount");
-        const totalQuestionsDisplay = document.getElementById("totalQuestions");
-        totalQuestionsDisplay.textContent = totalQuestions;
+        const finalResult = document.getElementById("finalResult");
 
         function updateCard() {
             if (flashcards.length === 0) {
-                flashcard.textContent = "Parabéns! Você completou todas as perguntas.";
-                optionsContainer.innerHTML = "";
+                displayFinalResult();
                 return;
             }
-            let card = flashcards[currentIndex];
+            let card = flashcards[0];
             flashcard.textContent = card.question;
             optionsContainer.innerHTML = "";
             selectedAnswers = [];
@@ -167,13 +162,13 @@
         }
 
         function submitAnswer() {
-            let correct = flashcards[currentIndex].correct;
+            let card = flashcards.shift();
+            let correct = card.correct;
             if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correct.sort())) {
                 correctAnswers++;
             }
-            flashcards.splice(currentIndex, 1);
             updateScore();
-            nextCard();
+            updateCard();
         }
 
         function updateScore() {
@@ -182,16 +177,19 @@
             answeredCountDisplay.textContent = correctAnswers;
         }
 
-        function nextCard() {
-            if (flashcards.length === 0) return;
-            currentIndex = Math.floor(Math.random() * flashcards.length);
-            updateCard();
+        function displayFinalResult() {
+            let percentage = Math.round((correctAnswers / totalQuestions) * 100);
+            finalResult.style.display = "block";
+            finalResult.textContent = percentage >= 60 ? "Parabéns! Você foi aprovado! 🎉" : "Infelizmente, você não atingiu a nota mínima. 😢";
         }
 
         function resetGame() {
             correctAnswers = 0;
-            shuffleArray(flashcards);
-            currentIndex = 0;
+            flashcards = [
+                { question: "O que é a computação em nuvem?", options: ["Entrega de serviços de TI pela Internet", "Servidores físicos locais", "Somente armazenamento de dados", "Exclusivo para grandes empresas"], correct: [0], multiple: false },
+                { question: "Quais são exemplos de modelos de serviço em nuvem?", options: ["SaaS", "IaaS", "PaaS", "VPN"], correct: [0,1,2], multiple: true }
+            ];
+            finalResult.style.display = "none";
             updateScore();
             updateCard();
         }
