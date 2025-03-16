@@ -52,6 +52,14 @@
             background: #007BFF;
             color: white;
         }
+        .option.correct {
+            background: #28a745 !important;
+            color: white;
+        }
+        .option.wrong {
+            background: #dc3545 !important;
+            color: white;
+        }
         .controls, .score {
             margin-top: 20px;
             display: flex;
@@ -88,13 +96,21 @@
             margin-top: 20px;
             display: none;
         }
+        .feedback {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #dc3545;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div class="score">Pontuação: <span id="score">0%</span> (<span id="answeredCount">0</span>/<span id="totalQuestions">116</span>)</div>
+    <div class="score">Pontuação: <span id="score">0%</span> (<span id="answeredCount">0</span>/<span id="totalQuestions">2</span>)</div>
     <div class="container">
         <div id="flashcard" class="flashcard"></div>
         <div id="options" class="options"></div>
+        <div id="feedback" class="feedback"></div>
         <div class="controls">
             <button onclick="submitAnswer()">Confirmar</button>
         </div>
@@ -121,23 +137,26 @@
         let totalQuestions = flashcards.length;
         let correctAnswers = 0;
         let selectedAnswers = [];
+        let currentCardIndex = 0;
 
         const flashcard = document.getElementById("flashcard");
         const optionsContainer = document.getElementById("options");
         const scoreDisplay = document.getElementById("score");
         const answeredCountDisplay = document.getElementById("answeredCount");
         const finalResult = document.getElementById("finalResult");
+        const feedback = document.getElementById("feedback");
 
         function updateCard() {
-            if (flashcards.length === 0) {
+            if (currentCardIndex >= flashcards.length) {
                 displayFinalResult();
                 return;
             }
-            let card = flashcards[0];
+            let card = flashcards[currentCardIndex];
             flashcard.textContent = card.question;
             optionsContainer.innerHTML = "";
             selectedAnswers = [];
-            
+            feedback.style.display = "none";
+
             card.options.forEach((option, index) => {
                 let optionElement = document.createElement("div");
                 optionElement.classList.add("option");
@@ -162,19 +181,42 @@
         }
 
         function submitAnswer() {
-            let card = flashcards.shift();
-            let correct = card.correct;
-            if (JSON.stringify(selectedAnswers.sort()) === JSON.stringify(correct.sort())) {
+            let card = flashcards[currentCardIndex];
+            let correct = card.correct.sort();
+            let selected = selectedAnswers.sort();
+
+            let options = document.querySelectorAll(".option");
+
+            if (JSON.stringify(selected) === JSON.stringify(correct)) {
                 correctAnswers++;
+            } else {
+                feedback.textContent = "Resposta incorreta! A resposta correta foi marcada.";
+                feedback.style.display = "block";
             }
-            updateScore();
-            updateCard();
+
+            // Destacar respostas
+            options.forEach((opt, index) => {
+                if (correct.includes(index)) {
+                    opt.classList.add("correct");
+                }
+                if (selected.includes(index) && !correct.includes(index)) {
+                    opt.classList.add("wrong");
+                }
+                opt.onclick = null; // Impede a mudança após confirmar
+            });
+
+            // Aguarda 2 segundos antes de avançar
+            setTimeout(() => {
+                currentCardIndex++;
+                updateScore();
+                updateCard();
+            }, 2000);
         }
 
         function updateScore() {
             let percentage = Math.round((correctAnswers / totalQuestions) * 100);
             scoreDisplay.textContent = `${percentage}%`;
-            answeredCountDisplay.textContent = correctAnswers;
+            answeredCountDisplay.textContent = currentCardIndex;
         }
 
         function displayFinalResult() {
@@ -185,10 +227,7 @@
 
         function resetGame() {
             correctAnswers = 0;
-            flashcards = [
-                { question: "O que é a computação em nuvem?", options: ["Entrega de serviços de TI pela Internet", "Servidores físicos locais", "Somente armazenamento de dados", "Exclusivo para grandes empresas"], correct: [0], multiple: false },
-                { question: "Quais são exemplos de modelos de serviço em nuvem?", options: ["SaaS", "IaaS", "PaaS", "VPN"], correct: [0,1,2], multiple: true }
-            ];
+            currentCardIndex = 0;
             finalResult.style.display = "none";
             updateScore();
             updateCard();
