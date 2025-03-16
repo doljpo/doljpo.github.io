@@ -64,7 +64,7 @@
             margin-top: 20px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px; /* Aumenta o espaço entre os botões Confirmar e Próxima Pergunta */
         }
         button {
             padding: 10px;
@@ -80,6 +80,7 @@
         }
         .reset {
             background: #dc3545;
+            margin-top: 20px; /* Aumenta o espaço entre Resetar e os outros botões */
         }
         .reset:hover {
             background: #c82333;
@@ -237,7 +238,7 @@
 
         function displayFinalResult() {
             finalResult.style.display = "block";
-            finalResult.textContent = correctAnswers >= (totalQuestions * 0.6) ? "Parabéns! 🎉" : "Tente novamente! 😢";
+            finalResult.textContent = correctAnswers >= (totalQuestions * 0.6) ? "Atingiu a nota mínima (60%). Parabéns! 🎉" : "Não atingiu a nota mínima (60%). Tente novamente! 😢";
         }
 
         function resetGame() {
