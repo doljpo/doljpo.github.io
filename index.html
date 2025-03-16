@@ -128,19 +128,751 @@
 
     <script>
         let flashcards = [
-            { 
-                question: "O que é a computação em nuvem?", 
-                options: ["Entrega de serviços de TI pela Internet", "Servidores físicos locais", "Somente armazenamento de dados", "Exclusivo para grandes empresas"],
-                correct: [0],
-                multiple: false
-            },
-            { 
-                question: "Quais são exemplos de modelos de serviço em nuvem?", 
-                options: ["SaaS", "IaaS", "PaaS", "VPN"],
-                correct: [0,1,2],
-                multiple: true
-            }
-        ];
+	{ 
+		"question": "De acordo com o NIST, o que é computação em nuvem?", 
+		"options": ["Um termo de marketing inventado pela AWS", "Aplicativos Salesforce hospedados em um data center remoto", "Acesso à rede sob demanda para recursos compartilhados", "Um servidor de hardware dividido em vários servidores virtuais"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "O que são autoatendimento sob demanda, amplo acesso à rede, pooling de recursos, elasticidade rápida e serviços medidos?", 
+		"options": ["Características de um prestador de serviço de acordo com IBV", "Características das opções de computação de acordo com o Gartner", "Características dos modelos de implantação de acordo com ITG", "Características da computação em nuvem de acordo com o NIST"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Custos de TI mais baixos, flexibilidade, eficiência, segurança e tempo de lançamento no mercado mais rápido são todos benefícios de?", 
+		"options": ["Computação em cluster", "Computação pessoal", "Computação de compartilhamento de tempo", "Computação em nuvem"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Os usuários podem aproveitar a computação em nuvem usando _______ que a nuvem fornece para reagir mais rapidamente às mudanças nas necessidades de negócios.", 
+		"options": ["Monitoramento", "Inteligência Artificial", "Agilidade", "Segurança"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Os provedores de nuvem têm redundância incorporada em suas _______, _______ dados e _______ de desastres.", 
+		"options": ["Sistemas, armazenamento, recuperação", "Redes, backup, recuperação", "Redes, armazenamento, recuperação", "Nuvem, backup, recuperação"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Quais dos seguintes são considerados três tipos de implantação de nuvem modelo?", 
+		"options": ["Público, Privado e Híbrido", "Rede, Público e Privado", "Público, Servidor e Privado", "Público, Privado e Cobertura de Aplicativos"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Como a virtualização auxilia na computação em nuvem?", 
+		"options": ["Acelera os cálculos matemáticos", "Facilita o gerenciamento de chaves", "Provisionamento mais lento", "Uso eficiente de hardware de computador físico"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual empresa é responsável por introduzir a virtualização?", 
+		"options": ["IBM", "Microsoft", "Compaq", "Amazon"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Eficiência de recursos, gerenciamento mais fácil, tempo de inatividade mínimo e provisionamento mais rápido são benefícios de?", 
+		"options": ["Visualização", "Gerenciamento de recursos", "Virtualização", "Desmaterialização"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "O que é um tipo de virtualização de aplicações?", 
+		"options": ["Área de trabalho virtual", "Virtualização de rede definida por software (SDN)", "Virtualização da CPU", "Virtualização de aplicativos locais"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Ao pensar em migrar cargas de trabalho para o IBM Cloud, qual é o principal fator comum?", 
+		"options": ["Agilidade", "DevOps", "Latência", "Segurança"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual é o principal benefício para as empresas que estão pensando em adotar um modelo de computação em nuvem?", 
+		"options": ["Latência", "Eficiência", "Integração", "Estabilidade"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Ao considerar o risco, o que os bancos devem ter em mente ao adotar uma estratégia de computação em nuvem?", 
+		"options": ["Tendências de mercado", "Concorrentes", "Integração", "Padrões regulatórios e de conformidade"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "De acordo com o IBM Institute of Business Value, qual das alternativas a seguir é uma razão pela qual as empresas muitas vezes migram para a computação em nuvem quando consideram expandir para novos setores?", 
+		"options": ["Ser visto como inovador", "Proteção contra ameaças de segurança", "Melhorar a experiência do cliente", "Necessidade de modernização da infraestrutura"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual processo é recomendado para consideração se uma empresa internacional quer adotar um modelo de computação em nuvem?", 
+		"options": ["Realocar alguns dados, aplicativos e cargas de trabalho para uma infraestrutura de nuvem", "Traduzir os dados, aplicativos e cargas de trabalho da organização nas línguas locais", "Redistribuir os dados, aplicativos e cargas de trabalho da organização para os vários países", "Escolher provedores de nuvem locais em cada país e mover seus dados"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Quais são os benefícios considerados da adoção da nuvem?", 
+		"options": ["Segurança da infraestrutura", "Custos fixos e DevOps", "Escalabilidade e custo-benefício", "Terceirização e integração"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual das alternativas a seguir é considerada um valor fornecido pela adoção de um modelo de computação em nuvem?", 
+		"options": ["Colaboração entre equipes de locais internacionais", "Eliminação do departamento de TI", "Eliminação de empregos devido à automação", "Independência das leis regulatórias locais"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual função do IBM Cloud projeta soluções em nuvem?", 
+		"options": ["Engenheiro de Confiabilidade do IBM Cloud Site", "IBM Cloud Architect (Arquiteto de Nuvem IBM)", "Desenvolvedor de Nuvem IBM", "Engenheiro de segurança em nuvem da IBM"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual função do IBM Cloud auxilia os clientes na criação de planos de ação para ajudá-los a resolver problemas críticos de negócios?", 
+		"options": ["IBM Cloud Architect", "Engenheiro de confiabilidade do site em nuvem da IBM", "Engenheiro de vendas do IBM Cloud", "Engenheiro de segurança em nuvem da IBM"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual função do IBM Cloud automatiza as operações de TI e melhora a disponibilidade do sistema e confiabilidade?", 
+		"options": ["IBM Cloud Architect", "Engenheiro de confiabilidade do site IBM Cloud", "Desenvolvedor de Nuvem IBM", "Engenheiro de segurança em nuvem da IBM"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual função da IBM Cloud pode ajudar um cliente a construir um centro de operações de rede moderno?", 
+		"options": ["Desenvolvedor de Nuvem IBM", "Engenheiro de confiabilidade do site em nuvem da IBM", "Engenheiro de vendas do IBM Cloud", "Engenheiro de segurança em nuvem da IBM"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual função do IBM Cloud é responsável por escrever o código para criar e manter aplicativos em nuvem?", 
+		"options": ["Engenheiro de vendas do IBM Cloud", "Engenheiro de confiabilidade do site em nuvem da IBM", "Engenheiro de segurança em nuvem da IBM", "Desenvolvedor de Nuvem IBM"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Uma organização decide hospedar aplicativos em uma nuvem pública. Quem é o dono da infraestrutura que é usada?", 
+		"options": ["Organizador de serviços", "Cliente", "Provedor de serviço de nuvem pública", "Gerente do centro de dados"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Em qual implantação de nuvem um usuário tem acesso exclusivo à nuvem de serviços de computação?", 
+		"options": ["Público", "Privado", "Híbrido", "Multicloud"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual modelo de computação em nuvem conecta a nuvem privada local de uma organização e uma nuvem pública de terceiros em uma única infraestrutura flexível para executar aplicativos e cargas de trabalho?", 
+		"options": ["Público", "Privado", "Híbrido", "Multicloud"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Infraestrutura mais facilmente customizada é um benefício de uma nuvem _______ sobre uma nuvem pública.", 
+		"options": ["Público", "Privado", "Híbrido", "Multicloud"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "A capacidade de evitar gastos de capital antecipadamente e pagar apenas pelo que for usado é um benefício de uma nuvem _______ em relação a uma nuvem privada.", 
+		"options": ["Público", "Comunidade", "Híbrido", "Multicloud"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Levantar e mudar algumas, mas não todas as cargas de trabalho existentes no local para a infraestrutura de nuvem pública é um caso de uso que funciona com qual modelo de implantação de nuvem?", 
+		"options": ["Público", "Privado", "Híbrido", "Multicloud"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Melhorar _______ e tempo de retorno são alguns dos principais benefícios que a computação em nuvem oferece melhor do que a TI local.", 
+		"options": ["Agilidade", "Redundância", "Latência", "Confiabilidade"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Projetado para desenvolvedores, qual serviço de computação em nuvem é um ambiente pronto para uso?", 
+		"options": ["PaaS (plataforma como serviço)", "IaaS (Infraestrutura como Serviço)", "SaaS (software como serviço)"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Nesse modelo de serviço em nuvem, o provedor de nuvem gerencia toda a plataforma, incluindo sistemas operacionais, ferramentas de desenvolvimento e bancos de dados.", 
+		"options": ["PaaS (plataforma como serviço)", "IaaS (Infraestrutura como Serviço)", "SaaS (software como serviço)"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual modelo de serviço em nuvem cobra pelo acesso do usuário a um aplicativo por meio de uma assinatura, transferindo as tarefas de gerenciamento do dia a dia para um fornecedor terceirizado?", 
+		"options": ["PaaS (plataforma como serviço)", "IaaS (Infraestrutura como Serviço)", "SaaS (software como serviço)"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Em qual modelo de serviço em nuvem o provedor de nuvem gerencia apenas os recursos físicos, data centers, rede e segurança geral da plataforma?", 
+		"options": ["PaaS (plataforma como serviço)", "IaaS (Infraestrutura como Serviço)", "SaaS (software como serviço)"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual modelo de implantação a TI pode adotar para evitar a Shadow IT?", 
+		"options": ["Nuvem privada", "Multicloud", "Computação de ponta", "Nuvem distribuída"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Uma combinação de desempenho, segurança, requisitos de conformidade e preços são benefícios da adoção de uma estratégia _______.", 
+		"options": ["Nuvem distribuída", "Nuvem privada", "Multicloud", "Nuvem pública"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "_______ e _______ nuvem não são mutuamente exclusivos, tendo características semelhantes.", 
+		"options": ["Privado e Público", "Híbrido e Público", "Computação de borda e Multicloud", "Multicloud e Híbrido"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual oferta IBM Cloud foi projetada para clientes interessados ​​em uma estratégia de nuvem distribuída?", 
+		"options": ["IBM Cloud Satélite", "Cadeia de ferramentas do IBM Cloud", "IBM Cloud App Connect", "IBM Cloud Block Storage"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "A conformidade com os regulamentos de privacidade de dados específicos do país é um benefício para uma instituição financeira que usa um modelo de computação em nuvem _______.", 
+		"options": ["Híbrido", "Multicloud", "Borda (EDGE)", "Distribuído"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "A computação _______ é um modelo de computação distribuída que aproxima a computação e o armazenamento de dados das fontes de dados.", 
+		"options": ["Perímetro", "Borda", "Fronteira", "Fringe"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Por que um modelo de computação distribuída e de ponta seria uma boa escolha para uma empresa melhorar sua eficiência ao aproximar a computação e o armazenamento de dados das fontes de dados?", 
+		"options": ["Para fornecer baixa latência para seus aplicativos", "Para fornecer redundância adicional", "Para fornecer resiliência mais fraca", "Para fornecer disponibilidade em 99,99%"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Defina o Console do IBM Cloud.", 
+		"options": ["Interface da Web para usuários gerenciarem recursos do IBM Cloud", "Interface de linha de comando para usuários gerenciarem recursos do IBM Cloud", "Aplicativo de desktop remoto para download para acessar servidores em Nuvem IBM", "Gerenciamento centralizado de recursos e serviço de configuração para uso com web e aplicativos móveis"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Como os usuários podem acessar a interface de linha de comando (CLI) do IBM Cloud?", 
+		"options": ["Extensão CLI", "Biblioteca de APIs", "IBM Cloud Shell", "SDKs do programador"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "No IBM Cloud Console, qual opção de menu você precisaria para inspecionar faturas anteriores?", 
+		"options": ["Documentos", "Gerenciar", "Suporte", "Catálogo"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Em qual modelo de serviço em nuvem o provedor de nuvem gerencia apenas os recursos físicos, data centers, rede e segurança geral da plataforma?", 
+		"options": ["PaaS (plataforma como serviço)", "IaaS (Infraestrutura como Serviço)", "SaaS (software como serviço)"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual modelo de implantação a TI pode adotar para evitar a Shadow IT?", 
+		"options": ["Nuvem privada", "Multicloud", "Computação de ponta", "Nuvem distribuída"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Uma combinação de desempenho, segurança, requisitos de conformidade e preços são benefícios da adoção de uma estratégia _______.", 
+		"options": ["Nuvem distribuída", "Nuvem privada", "Multicloud", "Nuvem pública"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "_______ e _______ nuvem não são mutuamente exclusivos, tendo características semelhantes.", 
+		"options": ["Privado e Público", "Híbrido e Público", "Computação de borda e Multicloud", "Multicloud e Híbrido"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual oferta IBM Cloud foi projetada para clientes interessados ​​em uma estratégia de nuvem distribuída?", 
+		"options": ["IBM Cloud Satélite", "Cadeia de ferramentas do IBM Cloud", "IBM Cloud App Connect", "IBM Cloud Block Storage"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "A conformidade com os regulamentos de privacidade de dados específicos do país é um benefício para uma instituição financeira que usa um modelo de computação em nuvem _______.", 
+		"options": ["Híbrido", "Multicloud", "Borda (EDGE)", "Distribuído"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "A computação _______ é um modelo de computação distribuída que aproxima a computação e o armazenamento de dados das fontes de dados.", 
+		"options": ["Perímetro", "Borda", "Fronteira", "Fringe"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Por que um modelo de computação distribuída e de ponta seria uma boa escolha para uma empresa melhorar sua eficiência ao aproximar a computação e o armazenamento de dados das fontes de dados?", 
+		"options": ["Para fornecer baixa latência para seus aplicativos", "Para fornecer redundância adicional", "Para fornecer resiliência mais fraca", "Para fornecer disponibilidade em 99,99%"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual opção no IBM Cloud Console lista mais de 200 produtos e serviços que os usuários podem optar por implementar em aplicativos da web ou móveis?", 
+		"options": ["Catálogo", "Documentos", "Gerenciar", "Estimador de custos"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual opção do IBM Cloud Console ajuda os arquitetos a determinar suas despesas mensais para um novo serviço?", 
+		"options": ["Documentos", "Suporte", "Gerenciar", "Estimador de custos"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual opção no IBM Cloud Console fornece tutoriais e ajuda no desenvolvimento e implementação?", 
+		"options": ["Gerenciar", "Documentos", "Cloud Shell", "Estimador de custos"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual opção no IBM Cloud Console um administrador pode convidar um novo membro da equipe para fazer parte de um grupo de acesso do IBM Cloud?", 
+		"options": ["Gerenciar", "Documentos", "Cloud Shell", "Catálogo"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "O que é um local de trabalho do IBM Cloud Shell?", 
+		"options": ["Um ambiente compartilhado que as equipes podem usar para gerenciar a nuvem de recursos", "Uma interface gráfica com o usuário do IBM Cloud que permite aos administradores controlar o acesso", "Uma forma de organizar os templates do Terraform e controlar o acesso", "Um espaço de trabalho pessoal onde um usuário pode executar comandos e espera dados do usuário e da sessão"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Uma empresa implantou um aplicativo crítico em três zonas em uma região multizona. Que nível de disponibilidade pode ser implantado nas três zonas?", 
+		"options": ["99,5%", "99,9%", "99,99%", "99,99999%"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "O que acontece se houver uma falha de rede em uma zona de uma região multizona, como no caso de um desastre natural?", 
+		"options": ["O tráfego é redirecionado automaticamente para uma zona de failover.", "Os balanceadores de carga aguardam a retomada da conectividade de rede.", "O tráfego é redirecionado automaticamente para a nuvem disponível mais próxima região.", "O tráfego é redirecionado automaticamente para uma instância de serviço diferente na mesma zona."],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual prática permite que o IBM Cloud forneça controles de segurança em camadas na rede e na infraestrutura?", 
+		"options": ["Engenharia segura", "Gerenciamento de Incidentes", "Governança de dados", "Insights operacionais"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "O IBM Cloud garante a prontidão de segurança ao aderir às políticas de segurança que são orientadas pelas melhores práticas para _______.", 
+		"options": ["Engenharia do usuário", "Engenharia de sistemas", "Engenharia de dados", "Engenharia de aplicação"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Ao usar a modelagem _______, o IBM Cloud garante a prontidão de segurança ao aderir às políticas de segurança.", 
+		"options": ["Acesso", "Criptografia", "Uso", "Ameaça"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Ao usar a varredura _______, o IBM Cloud garante a prontidão de segurança ao aderir às políticas de segurança.", 
+		"options": ["RBAC", "Código fonte", "Aplicação de criptografia", "Autenticação do aplicativo"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Onde a IBM criptografa todos os dados dentro do IBM Cloud?", 
+		"options": ["Na memória", "No backup", "No armazenamento", "Em trânsito"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Como o IBM Cloud monitora os eventos em torno do ciclo de vida das chaves no que se refere à criptografia?", 
+		"options": ["Rastreador de atividades", "Centro de Conformidade", "Análise de Log", "Monitor de nuvem"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "O que é apresentado no IBM Cloud Hyper Protect Crypto Services e é um gerenciamento de chave dedicado e módulo de segurança de hardware (HSM)?", 
+		"options": ["BYOK (traga sua própria chave)", "RYOK (Alugue sua própria chave)", "KYOK (Mantenha sua própria chave)", "CYOK (Crie sua própria chave)"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Quais são os dois tipos de recursos sempre de responsabilidade do cliente no modelo de responsabilidade compartilhada do IBM Cloud?", 
+		"options": ["Dados, Aplicativos", "Aplicações, Armazenamento", "Dados, Armazenamento", "Armazenamento, Criptografia"],
+		"correct": [0],
+		"multiple": true
+	},
+	{ 
+		"question": "Para regulamentos padrão do setor, como Payment Card Industry (PCI) ou Service Organization Control (SOC), como o IBM Cloud atende aos regulamentos?", 
+		"options": ["Relatórios de conformidade", "Gerente de risco de segurança", "Ativos ambientais", "Cloud Pak"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual regulamento da legislação da UE protege os dados e a privacidade?", 
+		"options": ["HIPPA", "RGPD", "PCI", "SSN"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Como a IBM Cloud está sendo ambientalmente consciente em relação aos seus servidores que estão em serviço?", 
+		"options": ["IBM Cloud está aproveitando os mais altos níveis de energia do setor certificação de criptografia de eficiência.", "O IBM Cloud fornece eficiência de energia e reciclagem em data centers.", "O IBM Cloud incorpora recursos de segurança que protegem o cluster a infraestrutura.", "O IBM Cloud permite segurança, conformidade e resiliência contínuas para reduzir os custos de conformidade."],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual serviço IBM Cloud, composto de gerenciamento de postura, governança de configuração e insights de segurança, permite que seus usuários obtenham segurança e conformidade?", 
+		"options": ["Serviço IBM Hyper Protect Crypto", "IBM Cloud Framework para Segurança e Conformidade", "IBM Cloud Security and Compliance Center", "Rastreador de atividades IBM"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual o objetivo da Governança de Configuração na Segurança e Centro de Conformidade?", 
+		"options": ["Ajuda as organizações a garantir que as leis sejam seguidas", "Cria um inventário de auditoria", "Ajuda os usuários a monitorar e analisar continuamente os recursos da nuvem para ameaças potenciais", "Protege contra configuração incorreta de recursos"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Por que os usuários criam modelos no Centro de Conformidade e Segurança?", 
+		"options": ["Para definir valores de propriedade para recursos suportados", "Para garantir que a notificação seja formatada corretamente", "Para verificar se os perfis correspondem aos critérios necessários", "Para configurar canais de notificação para alertas"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual tipo de conta tem as seguintes características: é criada automaticamente quando um usuário se registra no IBM Cloud, recebe suporte básico, e dá um crédito de US$ 200 para usar no IBM Cloud?", 
+		"options": ["Lite", "Assinatura", "Pague conforme o uso", "Empresa"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual tipo de conta permite a construção de uma hierarquia de contas corporativas e tem preços com desconto?", 
+		"options": ["Lite", "Assinatura", "Pague conforme o uso", "Empresa"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Quando as notificações de gastos são enviadas para contas do IBM Cloud?", 
+		"options": ["As notificações não são suportadas para contas do IBM Cloud.", "As notificações são enviadas quando 25%, 50% e 75% dos gastos são alcançados.", "As notificações são enviadas quando 95% dos gastos são atingidos.", "As notificações são enviadas quando 80%, 90% e 100% dos gastos são alcançados."],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual plano de suporte é o plano padrão para um tipo de conta pré-pago?", 
+		"options": ["Gratuito", "Básico", "Avançado", "Premium"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Quais planos de suporte estão disponíveis na IBM?", 
+		"options": ["Gratuito, Lite, Básico e Avançado", "Gratuito, Básico, Enterprise e Premium", "Básico, Avançado e Personalizado", "Básico, Avançado e Premium"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Como um usuário do IBM Cloud solicitaria um pacote de serviços de inscrição?", 
+		"options": ["Os serviços não são pacotes", "Por meio do console do IBM Cloud", "Entre em contato com o IBM Cloud Sales", "Por meio do catálogo do IBM Cloud"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Depois que uma assinatura de conta IBM expirar, qual dos seguintes processos ocorre?", 
+		"options": ["O acesso à conta está bloqueado", "A conta é convertida para pagamento conforme o uso", "O cartão de crédito é cobrado automaticamente", "A conta é convertida em uma conta gratuita"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "O IBM Cloud oferece quais três planos de suporte?", 
+		"options": ["Básico, Avançado, Premium", "Básico, Padrão e Profissional", "Padrão, Aprimorado e Premium", "Standard, Premium e Signature"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual é o plano de suporte padrão para qualquer pessoa com uma conta paga no IBM Cloud que permita a criação de casos ou tickets de suporte?", 
+		"options": ["Gratuito", "Entrada", "Padrão", "Básico"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual plano de suporte do IBM Cloud permite que um usuário atribua a gravidade do caso e fornece acesso 24 horas por dia, 7 dias por semana à equipe de suporte técnico do IBM Cloud por meio de casos, telefone e chat?", 
+		"options": ["Gratuito", "Básico", "Avançado", "Premium"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual plano de suporte no IBM Cloud inclui um Gerente Técnico de Contas?", 
+		"options": ["Gratuito", "Básico", "Avançado", "Premium"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "O cliente precisa de um tempo de resposta de suporte inferior a uma hora para problemas de Gravidade 1 para implementação no IBM Cloud. Qual plano de suporte é mais econômico?", 
+		"options": ["Gratuito", "Básico", "Avançado", "Premium"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual recurso do IBM Cloud é usado para controlar o acesso aos recursos na plataforma IBM Cloud e para autenticar usuários?", 
+		"options": ["Gerenciamento de identidade e acesso", "Plataforma confiável 2.0", "Serviços de Criptografia Hyper Protect", "Grupo de usuários do Kubernetes"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Dar aos usuários acesso a mais de um recurso por vez é um benefício dos grupos de recursos do IBM Cloud _______.", 
+		"options": ["Kubernetes", "IAM (gerenciamento de identidade e acesso)", "Diretório ativo do Azure", "MongoDB"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Uma política de gerenciamento de identidade e acesso (IAM) é composta por um assunto, destino e função. O que o IAM Target e o IAM Subject definem?", 
+		"options": ["Serviço e credenciais de login", "Usuário e direitos de acesso", "Serviço e direitos de acesso", "Serviço e usuário"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual desses conceitos no IAM é uma instância de um serviço de provisão de oferta do catálogo?", 
+		"options": ["Usuários", "Recursos", "Grupos de recursos", "Grupos de acesso"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "MongoDB é um exemplo de _______. Uma instância de produção do MongoDB é um exemplo de _______.", 
+		"options": ["Serviço, recurso", "Usuário, serviço", "Serviço, grupo de recursos", "Grupo de acesso, serviço"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Assim como um ID de usuário identifica um usuário, o que identifica o serviço ou aplicativo no Gerenciamento de Identidade e Acesso?", 
+		"options": ["Grupos de acesso", "CEPs", "IDs de serviço", "Grupos de recursos"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "O IBM Cloud oferece quais três planos de suporte?", 
+		"options": ["Básico, Avançado, Premium", "Básico, Padrão e Profissional", "Padrão, Aprimorado e Premium", "Standard, Premium e Signature"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual é o plano de suporte padrão para qualquer pessoa com uma conta paga no IBM Cloud que permita a criação de casos ou tickets de suporte?", 
+		"options": ["Gratuito", "Entrada", "Padrão", "Básico"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual plano de suporte do IBM Cloud permite que um usuário atribua a gravidade do caso e fornece acesso 24 horas por dia, 7 dias por semana à equipe de suporte técnico do IBM Cloud por meio de casos, telefone e chat?", 
+		"options": ["Gratuito", "Básico", "Avançado", "Premium"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual plano de suporte no IBM Cloud inclui um Gerente Técnico de Contas?", 
+		"options": ["Gratuito", "Básico", "Avançado", "Premium"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "O cliente precisa de um tempo de resposta de suporte inferior a uma hora para problemas de Gravidade 1 para implementação no IBM Cloud. Qual plano de suporte é mais econômico?", 
+		"options": ["Gratuito", "Básico", "Avançado", "Premium"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual recurso do IBM Cloud é usado para controlar o acesso aos recursos na plataforma IBM Cloud e para autenticar usuários?", 
+		"options": ["Gerenciamento de identidade e acesso", "Plataforma confiável 2.0", "Serviços de Criptografia Hyper Protect", "Grupo de usuários do Kubernetes"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Dar aos usuários acesso a mais de um recurso por vez é um benefício dos grupos de recursos do IBM Cloud _______.", 
+		"options": ["Kubernetes", "IAM (gerenciamento de identidade e acesso)", "Diretório ativo do Azure", "MongoDB"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Uma política de gerenciamento de identidade e acesso (IAM) é composta por um assunto, destino e função. O que o IAM Target e o IAM Subject definem?", 
+		"options": ["Serviço e credenciais de login", "Usuário e direitos de acesso", "Serviço e direitos de acesso", "Serviço e usuário"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual desses conceitos no IAM é uma instância de um serviço de provisão de oferta do catálogo?", 
+		"options": ["Usuários", "Recursos", "Grupos de recursos", "Grupos de acesso"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "MongoDB é um exemplo de _______. Uma instância de produção do MongoDB é um exemplo de _______.", 
+		"options": ["Serviço, recurso", "Usuário, serviço", "Serviço, grupo de recursos", "Grupo de acesso, serviço"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Assim como um ID de usuário identifica um usuário, o que identifica o serviço ou aplicativo no Gerenciamento de Identidade e Acesso?", 
+		"options": ["Grupos de acesso", "CEPs", "IDs de serviço", "Grupos de recursos"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual função no gerenciamento de identidade e acesso permitiria que um usuário gerenciasse recursos?", 
+		"options": ["Administrador", "Editor", "Visualizador", "Assistente"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual recurso do Gerenciamento de Identidade e Acesso requer métodos adicionais para comprovar a identidade e aumentar a segurança?", 
+		"options": ["Logon Único (SSO)", "Resolução de nomes de domínio", "Autenticação multifator (MFA)", "Chaveiro"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Para que um usuário execute apenas tarefas específicas quando lhe são atribuídas as diferentes regras, qual componente é mapeado para funções de Gerenciamento de Identidades e Acessos?", 
+		"options": ["Recursos", "Grupos de acesso", "Serviços", "Ações"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Para executar cargas de trabalho sem estado a um custo menor, que tipo de servidor de nuvem virtual você usaria?", 
+		"options": ["Servidor virtual reservado", "Servidor virtual dedicado", "Servidor virtual público", "Servidor virtual transitório"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Para permitir que os clientes comprem recursos garantidos por 1 a 3 anos, que tipo de servidor de nuvem virtual você usaria?", 
+		"options": ["Servidor virtual reservado", "Servidor virtual dedicado", "Servidor virtual público", "Servidor virtual transitório"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Para processamento intensivo e cargas de trabalho de entrada/saída (I/O) de disco, qual servidor de nuvem você usaria?", 
+		"options": ["Dedicado", "Bare Metal", "Reservado", "Transitório"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "_______ é uma vantagem de um servidor virtual sobre um servidor bare metal.", 
+		"options": ["Isolamento físico", "Controle completo", "Provisionamento rápido", "Desempenho de E/S de disco"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "O que é Zerto?", 
+		"options": ["Um serviço opcional para ajudar a gerenciar a recuperação de desastres", "Um balanceador de carga opcional", "Uma nuvem privada hospedada opcional", "Um serviço opcional que permite backup e replicação fáceis"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "O que é Veeam?", 
+		"options": ["Um serviço opcional para ajudar a gerenciar a recuperação de desastres", "Um balanceador de carga opcional", "Uma nuvem privada hospedada opcional", "Um serviço opcional que permite fácil backup e replicação"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual solução IBM Cloud foi projetada para fornecer uma entrada de autoatendimento econômica para a nuvem, aproveitando o VMware vCloud Director para ajudar a permitir que os clientes ampliem seus datacenters?", 
+		"options": ["vCenter Server", "VMware Compartilhado", "Regulamentado pela VMware", "VMware vSphere"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual solução IBM Cloud VMware é uma nuvem privada hospedada que fornece o VMware vSphere e inclui a implementação e configuração automáticas de um firewall de ponta lógico fácil de gerenciar?", 
+		"options": ["vCenter Server", "VMware Compartilhado", "Regulamentado pela VMware", "VMware vSphere"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual opção do IBM Cloud VMware é uma plataforma de pedidos simplificada e otimizada que oferece flexibilidade para projetar e construir um ambiente VMware hospedado?", 
+		"options": ["vCenter Server", "VMware Compartilhado", "Regulamentado pela VMware", "VMware vSphere"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "O que é Kubernetes?", 
+		"options": ["Software de gerenciamento de identidade e acesso", "Software de monitoramento e alerta", "Software de orquestração de contêiner de código aberto", "Software de recuperação de desastres"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "A portabilidade do container é possibilitada pelo container que transporta todo o seu _______.", 
+		"options": ["Notificações", "Dependências", "Regras", "Cargas de trabalho proprietárias"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual é a função do IBM Code Engine?", 
+		"options": ["Executa cargas de trabalho conteinerizadas em um ambiente totalmente gerenciado e sem servidor plataforma", "Oferece ambientes de área de trabalho virtual completos para os usuários", "Permite que uma empresa estabeleça sua própria nuvem privada como Ambiente de computação", "Expande o alcance das infraestruturas do IBM Cloud fora da IBM centros de dados na nuvem"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "O que é Red Hat OpenShift?", 
+		"options": ["Um ambiente de área de trabalho virtual para usuários", "Uma plataforma de software para construção de contêineres", "Uma plataforma proprietária portátil, extensível para gerenciamento cargas de trabalho e serviços conteinerizados", "Uma plataforma de gerenciamento de contêineres de nível empresarial"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Quais dos seguintes são três tipos comuns de serviços de armazenamento em nuvem no IBM Cloud?", 
+		"options": ["Arquivo, Bloco e SSD", "Objeto, Arquivo e Bloco", "Objeto, SSD e SATA", "Compartilhado, Dedicado e Privado"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual tipo de armazenamento é melhor para cargas de trabalho com alto desempenho?", 
+		"options": ["Arquivo", "SAN", "Bloco", "Objeto"],
+		"correct": [2],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual tipo de armazenamento é melhor para dados não estruturados que podem ser arquivados e não precisam ser acessados ​​com frequência?", 
+		"options": ["Arquivo", "SAN", "Bloco", "Objeto"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Liste os três níveis de resiliência do IBM Cloud Object Storage.", 
+		"options": ["Centro de dados único, regional e entre regiões", "Centro de dados regional, birregional e único", "Uma zona, duas zonas e três zonas", "Centro de dados único, regional e entre continentes"],
+		"correct": [0],
+		"multiple": false
+	},
+	{ 
+		"question": "Quais dos seguintes são os quatro níveis de armazenamento associados ao armazenamento de objetos em nuvem?", 
+		"options": ["Nível frio, nível frio, nível quente e nível quente", "Padrão, geleira, geleira profunda e arquivo de geleira profunda", "Acesso frequente, acesso muito frequente, acesso pouco frequente e muito acesso pouco frequente", "Nível inteligente, padrão, cofre e cofre frio"],
+		"correct": [3],
+		"multiple": false
+	},
+	{ 
+		"question": "Qual é o melhor tipo de armazenamento para organizar os dados em uma estrutura hierárquica de pastas e quando são solicitados compartilhamentos de arquivos, mas não é necessário alto desempenho?", 
+		"options": ["Armazenamento de objetos", "Armazenamento de arquivos", "Armazenamento local", "Armazenamento em bloco"],
+		"correct": [1],
+		"multiple": false
+	},
+	{ 
+		"question": "De que outra forma o armazenamento de conexão direta pode ser descrito no IBM Cloud?", 
+		"options": ["Armazenamento de objetos", "Armazenamento de arquivos", "Armazenamento local", "Armazenamento em bloco"],
+		"correct": [2],
+		"multiple": false
+	}
+];
 
         let totalQuestions = flashcards.length;
         let correctAnswers = 0;
@@ -204,7 +936,7 @@
                 feedback.textContent = "Resposta correta! ✅";
                 feedback.style.color = "#28a745";
             } else {
-                feedback.textContent = "Resposta incorreta! ❌ A correta foi destacada.";
+                feedback.textContent = "Resposta incorreta! ❌";
                 feedback.style.color = "#dc3545";
             }
 
@@ -238,7 +970,7 @@
 
         function displayFinalResult() {
             finalResult.style.display = "block";
-            finalResult.textContent = correctAnswers >= (totalQuestions * 0.6) ? "Atingiu a nota mínima (60%). Parabéns! 🎉" : "Não atingiu a nota mínima (60%). Tente novamente! 😢";
+            finalResult.textContent = correctAnswers >= (totalQuestions * 0.6) ? "Parabéns! 🎉" : "Tente novamente! 😢";
         }
 
         function resetGame() {
