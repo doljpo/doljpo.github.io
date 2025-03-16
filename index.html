@@ -60,10 +60,11 @@
             background: #dc3545 !important;
             color: white;
         }
-        .controls, .score {
+        .controls {
             margin-top: 20px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 10px;
         }
         button {
             padding: 10px;
@@ -73,14 +74,11 @@
             border-radius: 5px;
             background: #28a745;
             color: white;
-            flex: 1;
-            margin: 0 5px;
         }
         button:hover {
             background: #218838;
         }
         .reset {
-            margin-top: 10px;
             background: #dc3545;
         }
         .reset:hover {
@@ -89,6 +87,7 @@
         .score {
             font-size: 18px;
             font-weight: bold;
+            margin-bottom: 10px;
         }
         .final-result {
             font-size: 20px;
@@ -103,6 +102,13 @@
             color: #dc3545;
             display: none;
         }
+        #nextQuestion {
+            display: none;
+            background: #007BFF;
+        }
+        #nextQuestion:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -112,7 +118,8 @@
         <div id="options" class="options"></div>
         <div id="feedback" class="feedback"></div>
         <div class="controls">
-            <button onclick="submitAnswer()">Confirmar</button>
+            <button id="confirmButton" onclick="submitAnswer()">Confirmar</button>
+            <button id="nextQuestion" onclick="nextQuestion()">Próxima Pergunta</button>
         </div>
         <button class="reset" onclick="resetGame()">Resetar</button>
         <div id="finalResult" class="final-result"></div>
@@ -145,6 +152,8 @@
         const answeredCountDisplay = document.getElementById("answeredCount");
         const finalResult = document.getElementById("finalResult");
         const feedback = document.getElementById("feedback");
+        const confirmButton = document.getElementById("confirmButton");
+        const nextButton = document.getElementById("nextQuestion");
 
         function updateCard() {
             if (currentCardIndex >= flashcards.length) {
@@ -156,6 +165,8 @@
             optionsContainer.innerHTML = "";
             selectedAnswers = [];
             feedback.style.display = "none";
+            confirmButton.style.display = "block";
+            nextButton.style.display = "none";
 
             card.options.forEach((option, index) => {
                 let optionElement = document.createElement("div");
@@ -189,12 +200,15 @@
 
             if (JSON.stringify(selected) === JSON.stringify(correct)) {
                 correctAnswers++;
+                feedback.textContent = "Resposta correta! ✅";
+                feedback.style.color = "#28a745";
             } else {
-                feedback.textContent = "Resposta incorreta! A resposta correta foi marcada.";
-                feedback.style.display = "block";
+                feedback.textContent = "Resposta incorreta! ❌ A correta foi destacada.";
+                feedback.style.color = "#dc3545";
             }
 
-            // Destacar respostas
+            feedback.style.display = "block";
+
             options.forEach((opt, index) => {
                 if (correct.includes(index)) {
                     opt.classList.add("correct");
@@ -202,15 +216,17 @@
                 if (selected.includes(index) && !correct.includes(index)) {
                     opt.classList.add("wrong");
                 }
-                opt.onclick = null; // Impede a mudança após confirmar
+                opt.onclick = null;
             });
 
-            // Aguarda 2 segundos antes de avançar
-            setTimeout(() => {
-                currentCardIndex++;
-                updateScore();
-                updateCard();
-            }, 2000);
+            confirmButton.style.display = "none";
+            nextButton.style.display = "block";
+        }
+
+        function nextQuestion() {
+            currentCardIndex++;
+            updateScore();
+            updateCard();
         }
 
         function updateScore() {
@@ -220,9 +236,8 @@
         }
 
         function displayFinalResult() {
-            let percentage = Math.round((correctAnswers / totalQuestions) * 100);
             finalResult.style.display = "block";
-            finalResult.textContent = percentage >= 60 ? "Parabéns! Você foi aprovado! 🎉" : "Infelizmente, você não atingiu a nota mínima. 😢";
+            finalResult.textContent = correctAnswers >= (totalQuestions * 0.6) ? "Parabéns! 🎉" : "Tente novamente! 😢";
         }
 
         function resetGame() {
