@@ -113,7 +113,7 @@
     </style>
 </head>
 <body>
-    <div class="score">Pontuação: <span id="score">0%</span> (<span id="answeredCount">0</span>/<span id="totalQuestions">2</span>)</div>
+    <div class="score">Pontuação: <span id="score">0%</span> (<span id="answeredCount">0</span>/<span id="totalQuestions"></span>)</div>
     <div class="container">
         <div id="flashcard" class="flashcard"></div>
         <div id="options" class="options"></div>
@@ -887,6 +887,9 @@
         const feedback = document.getElementById("feedback");
         const confirmButton = document.getElementById("confirmButton");
         const nextButton = document.getElementById("nextQuestion");
+		
+        // Define o total de perguntas dinamicamente
+        document.getElementById("totalQuestions").textContent = totalQuestions;		
 
         function updateCard() {
             if (currentCardIndex >= flashcards.length) {
